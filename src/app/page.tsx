@@ -1,12 +1,16 @@
 import Marquee from '@/components/home/Marquee'
 import MainNews from '@/components/home/news/MainNews'
 import MostReadNews from '@/components/home/news/MostRead'
+import SelectedNews from '@/components/home/news/SelectedNews'
 import { getMostReadNews } from '@/services/getMostReadNewsService'
 import { getNews } from '@/services/newsService'
 
 const Home = async () => {
   const newsSection = await getNews()
   const mainNews = newsSection.find((section) => section.title === 'প্রধান খবর')
+  const selectedNews = newsSection.find(
+    (section) => section.title === 'নির্বাচিত খবর'
+  )
   const mostReadNews = await getMostReadNews()
 
   return (
@@ -15,9 +19,12 @@ const Home = async () => {
 
       <div className='grid grid-cols-12 max-w-7xl mx-auto gap-6 items-stretch'>
         {/* News Section */}
-        <div className='col-span-12 md:col-span-8 px-2 md:px-0 flex'>
+        <div className='col-span-12 flex-col md:col-span-8 px-2 md:px-0 flex'>
           <div className='w-full'>
             {mainNews && <MainNews news={mainNews} />}
+            <div className='mt-4'>
+              {selectedNews && <SelectedNews selectedNews={selectedNews} />}
+            </div>
           </div>
         </div>
 
