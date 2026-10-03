@@ -1,16 +1,14 @@
 import Marquee from '@/components/home/Marquee'
 import MainNews from '@/components/home/news/MainNews'
 import MostReadNews from '@/components/home/news/MostRead'
-import SelectedNews from '@/components/home/news/SelectedNews'
+import OtherNews from '@/components/home/news/OtherNews'
 import { getMostReadNews } from '@/services/getMostReadNewsService'
 import { getNews } from '@/services/newsService'
 
 const Home = async () => {
   const newsSection = await getNews()
   const mainNews = newsSection.find((section) => section.title === 'প্রধান খবর')
-  const selectedNews = newsSection.find(
-    (section) => section.title === 'নির্বাচিত খবর'
-  )
+  const otherNews = newsSection.slice(1)
   const mostReadNews = await getMostReadNews()
 
   return (
@@ -23,7 +21,7 @@ const Home = async () => {
           <div className='w-full'>
             {mainNews && <MainNews news={mainNews} />}
             <div className='mt-4'>
-              {selectedNews && <SelectedNews selectedNews={selectedNews} />}
+              {otherNews && <OtherNews otherNews={otherNews} />}
             </div>
           </div>
         </div>
