@@ -1,6 +1,6 @@
 import { NewsCategoryType } from '@/types/newsCategoriesType'
 
-export const getCategories = async (): Promise<NewsCategoryType[]> => {
+export const getCategoriesNavItems = async (): Promise<NewsCategoryType[]> => {
   try {
     const response = await fetch(
       `https://news-api-v2.vercel.app/api/categories`

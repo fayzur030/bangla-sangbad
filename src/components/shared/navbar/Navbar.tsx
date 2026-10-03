@@ -31,12 +31,12 @@ const Navbar = ({ navItems }: NavItemsProps) => {
 
           {/* Categories */}
           {filteredNavItems.map((nav, idx) => {
-            const active = pathname === nav.slug
+            const active = pathname === `/category/${nav.slug}`
 
             return (
               <Link
                 key={idx}
-                href={nav.slug}
+                href={`/category/${nav.slug}`}
                 className={`shrink-0 whitespace-nowrap text-sm font-medium transition hover:text-red-400 sm:text-base ${
                   active ? 'text-red-400' : 'text-white'
                 }`}

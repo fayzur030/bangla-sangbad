@@ -1,4 +1,3 @@
-import Marquee from '@/components/home/Marquee'
 import MainNews from '@/components/home/news/MainNews'
 import MostReadNews from '@/components/home/news/MostRead'
 import OtherNews from '@/components/home/news/OtherNews'
@@ -13,8 +12,6 @@ const Home = async () => {
 
   return (
     <div>
-      <Marquee />
-
       <div className='grid grid-cols-12 max-w-7xl mx-auto gap-6 items-stretch'>
         {/* News Section */}
         <div className='col-span-12 flex-col md:col-span-8 px-2 md:px-0 flex'>

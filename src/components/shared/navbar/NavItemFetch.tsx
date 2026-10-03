@@ -1,8 +1,8 @@
-import { getCategories } from '@/services/newsCategories'
+import { getCategoriesNavItems } from '@/services/newsCategoriesNavItem'
 import Navbar from './Navbar'
 
 const NavItemFetch = async () => {
-  const navItems = await getCategories()
+  const navItems = await getCategoriesNavItems()
 
   return (
     <div>
