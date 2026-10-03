@@ -11,7 +11,7 @@ const MarqueeList = ({ headLines }: HeadLinesProps) => {
   return (
     <div className='max-w-7xl mx-auto flex items-center overflow-hidden'>
       <h1 className='bg-red-800 px-5 py-2 rounded font-bold'>সর্বশেষ</h1>
-      <MarqueeText direction='right' duration={15}>
+      <MarqueeText direction='right' duration={10}>
         <ul className='flex items-center gap-6'>
           {headLines.map((headline) => (
             <li

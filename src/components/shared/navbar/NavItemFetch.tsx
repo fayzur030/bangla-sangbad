@@ -1,4 +1,4 @@
-import { getCategories } from '@/services/getCategories'
+import { getCategories } from '@/services/newsCategories'
 import Navbar from './Navbar'
 
 const NavItemFetch = async () => {
