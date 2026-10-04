@@ -8,7 +8,7 @@ interface NewsCategoryProps {
 const page = async ({ params }: NewsCategoryProps) => {
   const { categoryId } = await params
   const categoryNews = await getCategoryById(categoryId)
-  console.log(categoryNews)
+
   return (
     <div className='max-w-7xl mx-auto mt-4'>
       <div className='mb-5 border-b-2 border-[#FF0000] pb-3'>

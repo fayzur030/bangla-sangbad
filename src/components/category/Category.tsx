@@ -7,7 +7,6 @@ interface NewsProps {
 }
 
 const Category = ({ news }: NewsProps) => {
-  console.log(news)
   const formattedDate = new Date(news.firstPublished).toLocaleString('bn-BD', {
     timeZone: 'Asia/Dhaka',
     day: 'numeric',

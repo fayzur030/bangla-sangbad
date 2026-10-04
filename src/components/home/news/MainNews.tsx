@@ -14,36 +14,37 @@ const MainNews = ({ news }: NewsProps) => {
   return (
     <div className='grid grid-cols-1 md:grid-cols-2 gap-5 items-stretch mt-4'>
       {/* First News */}
-      <div className='card bg-base-100 w-full max-w-lg shadow-sm '>
-        <figure className='w-full'>
-          <Image
-            src={firstNews.imageUrl}
-            alt={firstNews.imageAlt}
-            width={640}
-            height={460}
-            className='w-full h-auto object-cover'
-          />
-        </figure>
+      <Link href={`/news/${firstNews.id}`}>
+        <div className='card bg-base-100 w-full max-w-lg shadow-sm '>
+          <figure className='w-full'>
+            <Image
+              src={firstNews.imageUrl}
+              alt={firstNews.imageAlt}
+              width={640}
+              height={460}
+              className='w-full h-auto object-cover'
+            />
+          </figure>
 
-        <div className='card-body'>
-          <p className='text-xs text-[#FF0000] font-semibold'>
-            {firstNews.category}
-          </p>
+          <div className='card-body'>
+            <p className='text-xs text-[#FF0000] font-semibold'>
+              {firstNews.category}
+            </p>
 
-          <Link
-            href={`/article/${firstNews.id}`}
-            className='card-title hover:text-[#FF0000] font-bold text-lg'
-          >
-            {firstNews.title}
-          </Link>
+            <h1 className='card-title hover:text-[#FF0000] font-bold text-lg'>
+              {firstNews.title}
+            </h1>
 
-          <p className='line-clamp-3 text-[#525252]'>{firstNews.description}</p>
+            <p className='line-clamp-3 text-[#525252]'>
+              {firstNews.description}
+            </p>
 
-          <div className='card-actions justify-start text-gray-500'>
-            <Date_Time />
+            <div className='card-actions justify-start text-gray-500'>
+              <Date_Time />
+            </div>
           </div>
         </div>
-      </div>
+      </Link>
       {/* Other News */}
 
       {/* Other News */}
@@ -58,7 +59,7 @@ const MainNews = ({ news }: NewsProps) => {
 
               {/* Title */}
               <Link
-                href={`/article/${item.id}`}
+                href={`/news/${firstNews.id}`}
                 className='block font-semibold text-base leading-snug transition-colors line-clamp-2'
               >
                 {item.title}

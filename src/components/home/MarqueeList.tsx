@@ -2,6 +2,7 @@ import MarqueeText from 'react-marquee-text'
 import 'react-marquee-text/dist/styles.css'
 import { LatestHeadlineType } from '@/types/latestHeadlinesType'
 import { Dot } from 'lucide-react'
+import Link from 'next/link'
 
 interface HeadLinesProps {
   headLines: LatestHeadlineType[]
@@ -14,12 +15,11 @@ const MarqueeList = ({ headLines }: HeadLinesProps) => {
       <MarqueeText direction='right' duration={10}>
         <ul className='flex items-center gap-6'>
           {headLines.map((headline) => (
-            <li
-              key={headline.id}
-              className='whitespace-nowrap text-sm  text-white flex items-center py-2'
-            >
-              <Dot /> {headline.title}
-            </li>
+            <Link href={`/news/${headline.id}`} key={headline.id}>
+              <li className='whitespace-nowrap text-sm  text-white flex items-center py-2 hover:underline'>
+                <Dot /> {headline.title}
+              </li>
+            </Link>
           ))}
         </ul>
       </MarqueeText>
@@ -28,3 +28,4 @@ const MarqueeList = ({ headLines }: HeadLinesProps) => {
 }
 
 export default MarqueeList
+//href={`/news/${firstNews.id}`}

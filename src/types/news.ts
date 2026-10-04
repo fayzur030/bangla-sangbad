@@ -25,3 +25,5 @@ export interface NewsSection {
 export interface NewsResponse {
   data: NewsSection[]
 }
+
+

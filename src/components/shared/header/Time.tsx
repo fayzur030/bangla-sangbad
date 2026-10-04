@@ -1,5 +1,28 @@
+'use client'
+
+import { useEffect, useState } from 'react'
+
 export default function DateTime() {
-  const now = new Date()
+  const [now, setNow] = useState<Date | null>(null)
+
+  useEffect(() => {
+    setNow(new Date())
+
+    const interval = setInterval(() => {
+      setNow(new Date())
+    }, 1000)
+
+    return () => clearInterval(interval)
+  }, [])
+
+  if (!now) {
+    return (
+      <div className='text-xs text-gray-500'>
+        <p>তারিখ</p>
+        <p>সময়</p>
+      </div>
+    )
+  }
 
   const date = now.toLocaleDateString('bn-BD', {
     weekday: 'long',
@@ -26,8 +49,8 @@ export default function DateTime() {
     .replace(/\s?(AM|PM|am|pm|পূর্বাহ্ণ|অপরাহ্ণ)/gi, '')
 
   return (
-    <div className='text-gray-500 text-xs'>
-      <p> {date}</p>
+    <div className='text-xs text-gray-500'>
+      <p>{date}</p>
       <p>
         {period} {time}
       </p>
