@@ -3,6 +3,8 @@ export const geNewsBytCategories = async (id: string) => {
   if (!res.ok) {
     throw new Error('fetch to category failed')
   }
+  console.log('STATUS:', res.status)
+  console.log('STATUS TEXT:', res.statusText)
   const data = await res.json()
   return data
 }
