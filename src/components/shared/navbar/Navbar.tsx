@@ -17,7 +17,7 @@ const Navbar = ({ navItems }: NavItemsProps) => {
   return (
     <nav className='bg-gray-900'>
       <div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
-        <div className='flex flex-nowrap items-center gap-x-6 overflow-x-auto py-3 sm:gap-x-8 sm:py-4 lg:overflow-visible'>
+        <div className='flex flex-nowrap items-center  gap-x-6 overflow-x-auto py-3 sm:gap-x-8 sm:py-4 lg:overflow-visible'>
           {/* Home */}
           <Link
             href='/'
