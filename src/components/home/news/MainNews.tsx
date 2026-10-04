@@ -59,7 +59,7 @@ const MainNews = ({ news }: NewsProps) => {
 
               {/* Title */}
               <Link
-                href={`/news/${firstNews.id}`}
+                href={`/news/${item.id}`}
                 className='block font-semibold text-base leading-snug transition-colors line-clamp-2'
               >
                 {item.title}

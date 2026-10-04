@@ -24,7 +24,7 @@ const MostRead = ({ mostRead }: MostReadProps) => {
 
                   {/* Title */}
                   <Link
-                    href={`/article/${read.id}`}
+                    href={`/news/${read.id}`}
                     className='text-base font-semibold leading-snug transition-colors hover:text-[#FF0000]'
                   >
                     {read.title}
