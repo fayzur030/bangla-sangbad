@@ -99,10 +99,10 @@ const SignUpPage = () => {
           </div>
           {/* Header */}
           <div className='mb-5 text-center'>
-            <h1 className='text-2xl font-bold text-gray-900'>সাইন আপ করুন</h1>
-            <p className='mt-1 text-sm text-gray-500'>
+            <h1 className='text-2xl font-bold text-red-600'>সাইন আপ করুন</h1>
+            {/* <p className='mt-1 text-sm text-gray-500'>
               Register to continue to <b>Bangla Sangbad</b>
-            </p>
+            </p> */}
           </div>
 
           {/* Form */}
@@ -121,7 +121,7 @@ const SignUpPage = () => {
                 name='name'
                 type='text'
                 placeholder='আপনার নাম লিখুন'
-                className='w-full rounded-lg border border-gray-300 px-4 py-2.5 text-sm outline-none transition focus:border-gray-900 focus:ring-1 focus:ring-gray-900'
+                className='w-full rounded-lg border border-gray-300 px-4 py-2.5 text-sm  outline-none transition focus:border-red-500 focus:bg-white focus:ring-2 focus:ring-red-100'
               />
             </div>
 
@@ -139,7 +139,7 @@ const SignUpPage = () => {
                 name='image'
                 type='url'
                 placeholder='https://example.com/profile.jpg'
-                className='w-full rounded-lg border border-gray-300 px-4 py-2.5 text-sm outline-none transition focus:border-gray-900 focus:ring-1 focus:ring-gray-900'
+                className='w-full rounded-lg border border-gray-300 px-4 py-2.5 text-sm outline-none transition focus:border-red-500 focus:bg-white focus:ring-2 focus:ring-red-100'
               />
             </div>
 
@@ -168,7 +168,7 @@ const SignUpPage = () => {
                 className={`w-full rounded-lg border px-4 py-2.5 text-sm outline-none transition ${
                   emailError
                     ? 'border-red-500 focus:border-red-500 focus:ring-1 focus:ring-red-500'
-                    : 'border-gray-300 focus:border-gray-900 focus:ring-1 focus:ring-gray-900'
+                    : 'border-gray-300 outline-none transition focus:border-red-500 focus:bg-white focus:ring-2 focus:ring-red-100'
                 }`}
               />
               {emailError && (
@@ -201,7 +201,7 @@ const SignUpPage = () => {
                 className={`w-full rounded-lg border px-4 py-2.5 text-sm outline-none transition ${
                   passwordError
                     ? 'border-red-500 focus:border-red-500 focus:ring-1 focus:ring-red-500'
-                    : 'border-gray-300 focus:border-gray-900 focus:ring-1 focus:ring-gray-900'
+                    : 'border-gray-300 outline-none transition focus:border-red-500 focus:bg-white focus:ring-2 focus:ring-red-100'
                 }`}
               />
               {passwordError && (
@@ -276,7 +276,7 @@ const SignUpPage = () => {
             ইতিমধ্যে একটি অ্যাকাউন্ট আছে?{' '}
             <Link
               href='/sign-in'
-              className='font-semibold text-red-600 hover:text-red-800 '
+              className='font-semibold text-red-600 hover:text-red-800 hover:underline'
             >
               সাইন ইন করুন
             </Link>
