@@ -6,6 +6,7 @@ import Image from 'next/image'
 import SearchBar from './SearchBar'
 import { CalendarDays, Search, X } from 'lucide-react'
 import DateTime from './Time'
+import Link from 'next/link'
 
 export default function Header() {
   const [searchOpen, setSearchOpen] = useState(false)
@@ -63,13 +64,17 @@ export default function Header() {
 
         {/* Desktop Auth Buttons */}
         <div className='hidden justify-center gap-2 lg:flex lg:justify-end'>
-          <button className='cursor-pointer rounded-md border border-gray-300 px-4 py-2 text-sm font-medium text-gray-700 transition hover:bg-gray-100'>
-            সাইন ইন
-          </button>
+          <Link href={'/sign-in'}>
+            <button className='cursor-pointer rounded-md border border-gray-300 px-4 py-2 text-sm font-medium text-gray-700 transition hover:bg-gray-100'>
+              সাইন ইন
+            </button>
+          </Link>
 
-          <button className='cursor-pointer rounded-md bg-red-600 px-4 py-2 text-sm font-medium text-white transition hover:bg-red-700'>
-            সাইন আপ
-          </button>
+          <Link href={'/sign-up'}>
+            <button className='cursor-pointer rounded-md bg-red-600 px-4 py-2 text-sm font-medium text-white transition hover:bg-red-700'>
+              সাইন আপ
+            </button>
+          </Link>
         </div>
       </div>
     </header>
