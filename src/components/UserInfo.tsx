@@ -37,7 +37,7 @@ const UserInfo = () => {
   return (
     <div>
       {user ? (
-        <div className='relative'>
+        <div className='relative '>
           {/* Avatar */}
           <button
             type='button'
@@ -92,14 +92,14 @@ const UserInfo = () => {
           )}
         </div>
       ) : (
-        <div className='hidden justify-center gap-2 lg:flex lg:justify-end'>
+        <div className=' flex justify-center gap-2 lg:justify-end'>
           <Link href='/sign-in'>
             <button className='cursor-pointer rounded-md border border-gray-300 px-4 py-2 text-sm font-medium text-gray-700 transition hover:bg-gray-100'>
               সাইন ইন
             </button>
           </Link>
 
-          <Link href='/sign-up'>
+          <Link href='/sign-up' className='hidden md:block'>
             <button className='cursor-pointer rounded-md bg-red-600 px-4 py-2 text-sm font-medium text-white transition hover:bg-red-700'>
               সাইন আপ
             </button>

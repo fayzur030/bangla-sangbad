@@ -49,7 +49,7 @@ const EditProfileModal = ({
     <div>
       <dialog
         open={openModal}
-        className='modal modal-bottom sm:modal-middle backdrop-blur-sm'
+        className='modal modal-middle sm:modal-middle backdrop-blur-sm'
       >
         <div className='modal-box'>
           {/* Header */}

@@ -29,25 +29,22 @@ export default function Header() {
 
           {/* Mobile Actions */}
           <div className='flex items-center gap-2 lg:hidden'>
-            {/* Search Button */}
             <button
-              onClick={() => setSearchOpen(!searchOpen)}
-              className='flex h-10 w-10 cursor-pointer items-center justify-center rounded-md border border-gray-300 text-gray-700 transition hover:bg-gray-100'
+              type='button'
+              onClick={() => setSearchOpen((prev) => !prev)}
+              className='rounded-full p-2 text-gray-700 transition hover:bg-gray-100'
               aria-label='Search'
             >
-              {searchOpen ? <X size={20} /> : <Search size={20} />}
+              {searchOpen ? <X size={22} /> : <Search size={22} />}
             </button>
 
-            {/* Sign In */}
-            <button className='cursor-pointer rounded-md border border-gray-300 px-4 py-2 text-sm font-medium text-gray-700 transition hover:bg-gray-100'>
-              সাইন ইন
-            </button>
+            <UserInfo />
           </div>
         </div>
 
         {/* Mobile Search Overlay */}
         {searchOpen && (
-          <div className='absolute left-0 right-0 top-full z-50 bg-white px-4 py-3 shadow-md lg:hidden'>
+          <div className='absolute left-0 right-0 top-full z-50 bg-white px-4 py-3 shadow-md '>
             <SearchBar />
           </div>
         )}
@@ -66,7 +63,9 @@ export default function Header() {
         </div>
 
         {/* Desktop Auth Buttons */}
-        <UserInfo />
+        <div className='hidden lg:block'>
+          <UserInfo />
+        </div>
       </div>
     </header>
   )
