@@ -17,13 +17,15 @@ export default function Header() {
       <div className='mx-auto flex max-w-7xl flex-col gap-5 px-4 py-4 sm:px-6 lg:flex-row lg:items-center lg:justify-between lg:gap-6 lg:px-8'>
         {/* Logo */}
         <div className='flex items-center justify-between lg:justify-start'>
-          <Image
-            src={headerLogo}
-            alt='Bangla Sangbad'
-            width={220}
-            priority
-            className='h-auto w-40 sm:w-52 lg:w-56'
-          />
+          <Link href={'/'}>
+            <Image
+              src={headerLogo}
+              alt='Bangla Sangbad'
+              width={220}
+              priority
+              className='h-auto w-40 sm:w-52 lg:w-56'
+            />
+          </Link>
 
           {/* Mobile Actions */}
           <div className='flex items-center gap-2 lg:hidden'>

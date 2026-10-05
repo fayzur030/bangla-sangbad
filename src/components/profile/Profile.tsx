@@ -1,11 +1,13 @@
 'use client'
 import { authClient } from '@/lib/auth-client'
 import Image from 'next/image'
-import React from 'react'
+import { useState } from 'react'
+import EditProfileModal from './EditProfileModal'
 
 const Profile = () => {
   const { data: session } = authClient.useSession()
   const user = session?.user
+  const [openModal, setOpenModal] = useState(false)
 
   return (
     <div>
@@ -83,7 +85,10 @@ const Profile = () => {
               </div>
               {/* Action */}
               <div className='mt-7 flex justify-end'>
-                <button className='cursor-pointer rounded-md mt-2 bg-red-600 px-4 py-2 text-sm font-medium text-white transition hover:bg-red-700'>
+                <button
+                  onClick={() => setOpenModal((prev) => !prev)}
+                  className='cursor-pointer rounded-md mt-2 bg-red-600 px-4 py-2 text-sm font-medium text-white transition hover:bg-red-700'
+                >
                   Edit profile
                 </button>
               </div>
@@ -91,6 +96,13 @@ const Profile = () => {
           </div>
         </div>
       </main>
+      {openModal && (
+        <EditProfileModal
+          openModal={openModal}
+          setOpenModal={setOpenModal}
+          user={user}
+        />
+      )}
     </div>
   )
 }
