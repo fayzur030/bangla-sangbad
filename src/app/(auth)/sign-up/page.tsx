@@ -131,7 +131,7 @@ const SignUpPage = () => {
                 htmlFor='image'
                 className='mb-1.5 block text-sm font-medium text-gray-700'
               >
-                Image URL
+                ইমেজ
               </label>
 
               <input
@@ -222,7 +222,7 @@ const SignUpPage = () => {
           <div className='my-4 flex items-center gap-3'>
             <div className='h-px flex-1 bg-gray-200' />
 
-            <span className='text-xs text-gray-400'>OR</span>
+            <span className='text-xs text-gray-400'>অথবা</span>
 
             <div className='h-px flex-1 bg-gray-200' />
           </div>

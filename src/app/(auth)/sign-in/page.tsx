@@ -1,6 +1,44 @@
+'use client'
+import { authClient } from '@/lib/auth-client'
 import Link from 'next/link'
-
+import { redirect } from 'next/navigation'
+import { toast } from 'sonner'
+type SignInData = {
+  email: string
+  password: string
+}
 const SignInForm = () => {
+  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    const formData = new FormData(e.currentTarget)
+    const userData = Object.fromEntries(formData.entries()) as SignInData
+
+    const { error } = await authClient.signIn.email({
+      email: userData.email,
+      password: userData.password,
+    })
+    if (error) {
+      toast.error('ইমেইল অথবা পাসওয়ার্ড সঠিক নয়। আবার চেষ্টা করুন।')
+      return
+    }
+    toast.success('স্বাগতম! সফলভাবে সাইন ইন করেছেন।')
+    redirect('/')
+  }
+
+  // sign in with google
+
+  const handleGoogleSignIn = async () => {
+    const { error } = await authClient.signIn.social({
+      provider: 'google',
+      callbackURL: '/',
+    })
+
+    if (error) {
+      toast.error('Google দিয়ে সাইন ইন করা যায়নি। আবার চেষ্টা করুন।')
+      return
+    }
+  }
+
   return (
     <div className='flex min-h-screen items-center justify-center bg-gray-100 px-4 py-6'>
       <div className='w-full max-w-lg'>
@@ -26,7 +64,7 @@ const SignInForm = () => {
           </div>
 
           {/* Form */}
-          <form className='space-y-3.5'>
+          <form className='space-y-3.5' onSubmit={onSubmit}>
             {/* Email */}
             <div>
               <label
@@ -38,6 +76,7 @@ const SignInForm = () => {
 
               <input
                 id='email'
+                name='email'
                 type='email'
                 placeholder='আপনার ইমেইল লিখুন'
                 className='w-full rounded-lg border border-gray-300 px-4 py-2.5 text-sm outline-none transition focus:border-red-500 focus:bg-white focus:ring-2 focus:ring-red-100'
@@ -58,12 +97,13 @@ const SignInForm = () => {
                   href='/forgot-password'
                   className='text-xs font-medium text-red-600 hover:underline underline-red-600 transition hover:text-red-800'
                 >
-                  Forgot Password?
+                  পাসওয়ার্ড ভুলে গেছেন?
                 </Link>
               </div>
 
               <input
                 id='password'
+                name='password'
                 type='password'
                 placeholder='পাসওয়ার্ড লিখুন'
                 className='w-full rounded-lg border border-gray-300 px-4 py-2.5 text-sm outline-none transition focus:border-red-500 focus:bg-white focus:ring-2 focus:ring-red-100'
@@ -72,10 +112,10 @@ const SignInForm = () => {
 
             {/* Sign In Button */}
             <button
-              type='button'
+              type='submit'
               className='w-full rounded-lg bg-[#FF0000] cursor-pointer px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-red-800'
             >
-              Sign In
+              সাইন ইন করুন
             </button>
           </form>
 
@@ -83,7 +123,7 @@ const SignInForm = () => {
           <div className='my-4 flex items-center gap-3'>
             <div className='h-px flex-1 bg-gray-200' />
 
-            <span className='text-xs text-gray-400'>OR</span>
+            <span className='text-xs text-gray-400'>অথবা</span>
 
             <div className='h-px flex-1 bg-gray-200' />
           </div>
@@ -92,8 +132,9 @@ const SignInForm = () => {
           <div className='grid grid-cols-2 gap-3'>
             {/* Google */}
             <button
+              onClick={handleGoogleSignIn}
               type='button'
-              className='flex items-center justify-center gap-2 rounded-lg border border-gray-300 bg-white px-4 py-2.5 text-sm font-medium text-gray-700 transition hover:bg-gray-50'
+              className='flex items-center cursor-pointer justify-center gap-2 rounded-lg border border-gray-300 bg-white px-4 py-2.5 text-sm font-medium text-gray-700 transition hover:bg-gray-50'
             >
               <svg viewBox='0 0 24 24' className='h-5 w-5' aria-hidden='true'>
                 <path
@@ -134,7 +175,7 @@ const SignInForm = () => {
 
           {/* Sign Up */}
           <p className='mt-4 text-center text-sm text-gray-500'>
-            Don&apos;t have an account?{' '}
+            অ্যাকাউন্ট নেই?{' '}
             <Link
               href='/sign-up'
               className='font-semibold text-red-500 transition hover:text-red-800'
