@@ -1,37 +1,111 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 📰 Bangla Sangbad
 
-## Getting Started
+**Bangla Sangbad** is a modern and responsive Bengali news website where users can easily explore the latest news from different categories.
 
-First, run the development server:
+The project is built with modern web technologies and focuses on a clean user interface, responsive design, and a smooth reading experience.
+
+## ✨ Features
+
+- 📰 Latest News
+- 🔥 Featured / প্রধান খবর
+- 📂 Browse News by Category
+- 🔎 Search News
+- 📖 News Details Page
+- 🔥 Most Read News
+- 🕐 Bengali Date & Time
+- 🔐 User Sign In & Sign Up
+- 👤 User Profile
+- 📱 Fully Responsive Design
+- ⏳ Loading State
+- 🚫 Custom 404 Page
+- 🔗 Dynamic Article & Category Routes
+
+## 🛠️ Technologies
+
+- **Next.js**
+- **React**
+- **TypeScript**
+- **Tailwind CSS**
+- **Better Auth**
+- **Lucide React**
+
+## 📡 News API
+
+This project uses a news API to fetch news dynamically.
+
+It provides:
+
+- Latest news
+- News categories
+- Individual article details
+- Category-based news
+
+## 🚀 Getting Started
+
+First, clone the repository:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/fayzur030/bangla-sangbad
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then, go to the project directory:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+cd bangla-sangbad
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Install the dependencies:
 
-## Learn More
+```bash
+npm install
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Run the development server:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+npm run dev
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-# bangla-sangbad
+Now open:
+
+
+
+## 📁 Main Pages
+
+
+/                       → Homepage
+/news/[id]           → News Details
+/category/[id]          → Category News
+/login                  → Sign In
+/register               → Sign Up
+
+
+## 📱 Responsive Design
+
+Bangla Sangbad is designed to provide a good experience across:
+
+- 💻 Desktop
+- 💼 Laptop
+- 📱 Mobile
+- 📟 Tablet
+
+## 🎯 Purpose
+
+This project was created as a real-world practice project to improve my skills in **Next.js, TypeScript, API integration, authentication, responsive UI, and modern web development**.
+
+## 👨‍💻 Author
+
+**Md. Fayzur Rahman**
+
+Passionate Full-Stack Web Developer focused on building modern and user-friendly web applications.
+
+<!-- - GitHub: [fayzur030](https://github.com/fayzur030)
+- LinkedIn: [Md. Fayzur Rahman](https://www.linkedin.com/in/md-fayzur-rahman-00a673380/) -->
+
+## ⭐ Support
+
+If you like this project, please consider giving the repository a ⭐.
+
+---
+
+**Made with ❤️ by Md. Fayzur Rahman**
