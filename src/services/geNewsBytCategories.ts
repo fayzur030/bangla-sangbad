@@ -1,10 +1,14 @@
-export const geNewsBytCategories = async (id: string) => {
+import { notFound } from 'next/navigation'
+
+export const getNewsBytCategories = async (id: string) => {
   const res = await fetch(`https://news-api-v2.vercel.app/api/category/${id}`)
   if (!res.ok) {
-    throw new Error('fetch to category failed')
+    return notFound()
   }
-  console.log('STATUS:', res.status)
-  console.log('STATUS TEXT:', res.statusText)
+
   const data = await res.json()
+  if (!data) {
+    notFound()
+  }
   return data
 }

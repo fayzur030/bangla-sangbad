@@ -1,4 +1,5 @@
 import { MostReadNews } from '@/types/mostReadNews'
+import { notFound } from 'next/navigation'
 
 export const getMostReadNews = async (): Promise<MostReadNews[]> => {
   try {
@@ -6,9 +7,12 @@ export const getMostReadNews = async (): Promise<MostReadNews[]> => {
       `https://news-api-v2.vercel.app/api/news/most-read`
     )
     if (!response.ok) {
-      throw new Error('fetch to categories field')
+      return notFound()
     }
     const mostRead = await response.json()
+    if (!mostRead) {
+      return notFound()
+    }
     return mostRead.data
   } catch (error) {
     console.log(error)

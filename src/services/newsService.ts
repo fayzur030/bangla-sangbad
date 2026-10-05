@@ -1,4 +1,5 @@
 import { NewsSection } from '@/types/news'
+import { notFound } from 'next/navigation'
 
 export const getNews = async (): Promise<NewsSection[]> => {
   try {
@@ -7,11 +8,14 @@ export const getNews = async (): Promise<NewsSection[]> => {
     )
 
     if (!response.ok) {
-      throw new Error('Failed to fetch news')
+      return notFound()
     }
 
     const data = await response.json()
     const section = data.data
+    if (!section) {
+      return notFound()
+    }
     return section
   } catch (error) {
     console.error(error)
