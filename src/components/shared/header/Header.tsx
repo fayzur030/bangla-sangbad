@@ -13,7 +13,7 @@ export default function Header() {
   const [searchOpen, setSearchOpen] = useState(false)
 
   return (
-    <header className='relative bg-white sticky top-0 z-50'>
+    <header className=' bg-white sticky top-0 z-50 border-b border-neutral-100 '>
       <div className='mx-auto flex max-w-7xl flex-col gap-5 px-4 py-4 sm:px-6 lg:flex-row lg:items-center lg:justify-between lg:gap-6 lg:px-8'>
         {/* Logo */}
         <div className='flex items-center justify-between lg:justify-start'>

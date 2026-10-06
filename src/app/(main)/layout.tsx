@@ -1,4 +1,5 @@
 import Marquee from '@/components/home/Marquee'
+import Footer from '@/components/shared/Footer'
 import Header from '@/components/shared/header/Header'
 import Navbar from '@/components/shared/navbar/Navbar'
 import { getCategoriesNavItems } from '@/services/newsCategoriesNavItem'
@@ -15,6 +16,7 @@ export default async function MainLayout({
       <Navbar navItems={navItems} />
       <Marquee />
       <main>{children}</main>
+      <Footer />
     </>
   )
 }
