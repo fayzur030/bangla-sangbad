@@ -76,7 +76,8 @@ const SignUpPage = () => {
       return
     }
     toast.success('রেজিস্ট্রেশন সফল হয়েছে!')
-    redirect('/sign-in')
+    // redirect('/sign-in')
+    redirect(`/verify-account?email=${encodeURIComponent(userData.email)}`)
   }
 
   return (

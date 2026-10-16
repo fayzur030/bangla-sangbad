@@ -45,7 +45,7 @@ export default function Header() {
         {/* Mobile Search Overlay */}
         {searchOpen && (
           <div className='absolute left-0 right-0 top-full z-50 bg-white px-4 py-3 shadow-md '>
-            <SearchBar />
+            <SearchBar onNavigate={() => setSearchOpen(false)} />
           </div>
         )}
 
